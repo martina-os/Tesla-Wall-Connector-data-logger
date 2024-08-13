@@ -1,0 +1,16 @@
+[Unit]
+Description=Run after all
+After=graphical.target
+
+[Service]
+Environment=XAUTHORITY=/home/admin/.Xauthority
+DISPLAY=:0
+User=admin
+Type=idle
+RemainAfterExit=yes
+ExecStart=/home/admin/twc/start_twc_logger.sh
+User=admin
+Environment=XAUTHORITY=/home/admin/.Xauthority
+
+[Install]
+WantedBy=graphical.target
